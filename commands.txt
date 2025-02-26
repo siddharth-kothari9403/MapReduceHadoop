@@ -1,0 +1,289 @@
+    1  su - hadoop
+    2  ssh-keygen -t rsa
+    3  cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys 
+    4  chmod 640 ~/.ssh/authorized_keys
+    5  ssh localhost
+    6  ls
+    7  cd hadoop
+    8  ls
+    9  cd ..
+   10  sudo cp /home/siddharth/nosql/Assignment\ 2/WordCount.java /home/hadoop/hadoop && sudo chown hadoop:hadoop /home/hadoop/hadoop
+   11  cd hadoop
+   12  ls
+   13  code .
+   14  cat WordCount.java 
+   15  java -jar WordCount.java
+   16  javac WordCount.java 
+   17  java -version
+   18  mv WordCount.java ../
+   19  cd ..
+   20  l
+   21  ls
+   22  cd hadoop
+   23  ls
+   24  cd ..
+   25  cd hadoop/share/
+   26  ls
+   27  cd hadoop/
+   28  ls
+   29  cd common/
+   30  ls
+   31  cd ../../../..
+   32  cd hadoop/share/hadoop/common/
+   33  pwd
+   34  cd ../../../..
+   35  javac -classpath /home/hadoop/hadoop/share/hadoop/common/hadoop-common-3.4.1.jar -sourcepath ./ -d build/ WordCount.java
+   36  mkdir build
+   37  javac -classpath /home/hadoop/hadoop/share/hadoop/common/hadoop-common-3.4.1.jar -sourcepath ./ -d build/ WordCount.java
+   38  javac -cp $(hadoop classpath) WordCount.java 
+   39  ls
+   40  jar -cvf WordCount.jar -C .
+   41  jar -cvf WordCount.jar .
+   42  ls
+   43  rm -rf hadoop-3.4.1.tar.gz 
+   44  jar -cvf WordCount.jar .
+   45  ls
+   46  whoami
+   47  hdfs dfs -mkdir -p /user/hadoop/input
+   48  jps
+   49  start-dfs.sh
+   50  start-all.sh
+   51  jps
+   52  hdfs dfs -mkdir -p /user/hadoop/input
+   53  hdfs dfs -put WordCount.jar /user/hadoop
+   54  ls
+   55  hdfs dfs -put Wikipedia-50-ARTICLES.tar /user/hadoop/input
+   56  ls
+   57  jar tf your_jar.jar | grep META-INF/MANIFEST.MF
+   58  jar tf WordCount.jar | grep META-INF/MANIFEST.MF
+   59  cat META-INF/MANIFEST.MF
+   60  jar xf WordCount.jar META-INF/MANIFEST.MF
+   61  cat META-INF/MANIFEST.MF 
+   62  ls
+   63  rm -rf META-INF/
+   64  ls
+   65  hadoop jar WordCount.jar WordCount /user/hadoop/input /user/hadoop/output
+   66  hdfs dfs -cat /user/hadoop/output/part-r-00000
+   67  history
+   68  history > commands.txt
+   69  cat commands.txt
+   70  ls
+   71  mkdir Assignment_2
+   72  cd Assignment_2/
+   73  vim WikipediaMapper.java
+   74  vim WikipediaReducer.java
+   75  vim WikipediaJob.java
+   76  ls
+   77  tar -xvzf Wikipedia-50-ARTICLES.tar.gz -C extracted_articles_50/
+   78  tar -xvzf Wikipedia-50-ARTICLES.tar -C extracted_articles_50/
+   79  cd ..
+   80  ls
+   81  cd build/
+   82  ls
+   83  cd .
+   84  cd ..
+   85  cd Assignment_2/
+   86  javac -cp $(hadoop classpath) -d output/ WikipediaMapper.java WikipediaReducer.java WikipediaJob.java
+   87  mkdir output
+   88  javac -cp $(hadoop classpath) -d output/ WikipediaMapper.java WikipediaReducer.java WikipediaJob.java
+   89  jar -cvf WikipediaJob.jar -C output/ .
+   90  tar -xvf Wikipedia-50-ARTICLES.tar -C extracted_articles_50/
+   91  mkdir extracted_articles_50
+   92  tar -xvf Wikipedia-50-ARTICLES.tar -C extracted_articles_50/
+   93  hdfs dfs -mkdir -p /user/hadoop/input
+   94  hdfs dfs -put extracted_articles/*.txt /user/hadoop/input/
+   95  hdfs dfs -put extracted_articles_50/*.txt /user/hadoop/input/
+   96  ls
+   97  hdfs dfs -put extracted_articles_50/*.txt /user/hadoop/input
+   98  ls -lh extracted_articles_50/
+   99  cd extracted_articles_50/
+  100  ls
+  101  cd Wikipedia-50-ARTICLES/
+  102  ls
+  103  mv *.txt ./
+  104  mv *.txt ../
+  105  ls
+  106  cd ..
+  107  ls
+  108  rm -rf Wikipedia-50-ARTICLES/
+  109  cd ..
+  110  hdfs dfs -put extracted_articles_50/*.txt /user/hadoop/input
+  111  cd output/
+  112  ls
+  113  cd ..
+  114  ls
+  115  hadoop jar WikipediaJob.jar WikipediaJob /user/hadoop/input /user/hadoop/output
+  116  hdfs dfs -rm -r /user/hadoop/input 
+  117  hdfs dfs -rm -r /user/hadoop/output 
+  118  hdfs dfs -mkdir -p /user/hadoop/input
+  119  hdfs dfs -put extracted_articles_50/*.txt /user/hadoop/input/
+  120  hadoop jar WikipediaJob.jar WikipediaJob /user/hadoop/input /user/hadoop/output
+  121  hdfs dfs -cat /user/hadoop/output/part-*
+  122  ls
+  123  vim WikipediaJob.java
+  124  hdfs dfs -ls /user/hadoop/output/
+  125  cd ..
+  126  ls
+  127  history > commands.txt
+  128  cat commands.txt 
+  129  hdfs dfs -cat /user/hadoop/output/part-*
+  130  ls
+  131  cd Assignment_2/
+  132  ls
+  133  vim TimestampMapper.java
+  134  vim MaxTimestampReducer.java
+  135  vim WikipediaTimestampDriver.java
+  136  cd output
+  137  ls
+  138  cd ..
+  139  cat ../commands.txt 
+  140  mkdir classes
+  141  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java 
+  142  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  143  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/
+  144  cat ../commands.txt 
+  145  hdfs dfs -cat /user/hadoop/output1/part-*
+  146  hdfs dfs -ls /user/hadoop/output1/
+  147  hdfs dfs -ls /user/hadoop/output/
+  148  hdfs dfs -cat /user/hadoop/output/part-*
+  149  ls
+  150  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/
+  151  cat ../commands.txt
+  152  hdfs dfs -rm -r /user/hadoop/output1 
+  153  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/
+  154  hdfs dfs -cat /user/hadoop/output/part-*
+  155  hdfs dfs -cat /user/hadoop/output1/part-*
+  156  hdfs dfs -cat /user/hadoop/output1/part-r-00000 | head -n 10
+  157  hdfs dfs -cat /user/hadoop/output/part-r-00000 | head -n 10
+  158  vim TimestampMapper.java 
+  159  cat ../commands.txt 
+  160  history
+  161  avac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  162  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  163  vim TimestampMapper.java 
+  164  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  165  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  166  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/
+  167  hdfs dfs -rm -r /user/hadoop/output1 
+  168  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/
+  169  hdfs dfs -cat /user/hadoop/output1/part-*
+  170  vim MaxTimestampReducer.java 
+  171  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  172  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  173  hdfs dfs -rm -r /user/hadoop/output1 
+  174  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/
+  175  hdfs dfs -cat /user/hadoop/output1/part-*
+  176  vim TimestampMapper.java 
+  177  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  178  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  179  hdfs dfs -rm -r /user/hadoop/output1 
+  180  hdfs dfs -cat /user/hadoop/output1/part-*
+  181  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/
+  182  hdfs dfs -rm -r /user/hadoop/output1 
+  183  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  184  ls
+  185  hdfs dfs -cat /user/hadoop/output1/part-*
+  186  vim output.txt
+  187  vim TimestampMapper.java 
+  188  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  189  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  190  hdfs dfs -rm -r /user/hadoop/output1 
+  191  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  192  hdfs dfs -cat /user/hadoop/output1/part-*
+  193  vim TimestampMapper.java 
+  194  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  195  vim TimestampMapper.java 
+  196  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  197  vim TimestampMapper.java 
+  198  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  199  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  200  hdfs dfs -rm -r /user/hadoop/output1 
+  201  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  202  hdfs dfs -cat /user/hadoop/output1/part-*
+  203  hdfs dfs -ls /user/hadoop/output1/
+  204  vim output.txt 
+  205  vim TimestampMapper.java 
+  206  vim output.txt 
+  207  vim TimestampMapper.java 
+  208  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  209  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  210  hdfs dfs -rm -r /user/hadoop/output1 
+  211  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  212  hdfs dfs -cat /user/hadoop/output1/part-*
+  213  vim output.txt 
+  214  ls
+  215  hdfs dfs -cat /user/hadoop/output/part-*
+  216  vim TimestampMapper.java 
+  217  vim output.txt 
+  218  vim TimestampMapper.java 
+  219  vim output.txt 
+  220  vim TimestampMapper.java 
+  221  vim output.txt 
+  222  vim TimestampMapper.java 
+  223  vim MaxTimestampReducer.java 
+  224  vim TimestampMapper.java 
+  225  vim MaxTimestampReducer.java 
+  226  vim output.txt 
+  227  vim MaxTimestampReducer.java 
+  228  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  229  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  230  hdfs dfs -rm -r /user/hadoop/output1 
+  231  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  232  hdfs dfs -cat /user/hadoop/output1/part-*
+  233  vim output.txt 
+  234  vim MaxTimestampReducer.java 
+  235  vim TimestampMapper.java 
+  236  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  237  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  238  hdfs dfs -rm -r /user/hadoop/output1 
+  239  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  240  vim output.txt
+  241  vim MaxTimestampReducer.java 
+  242  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  243  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  244  hdfs dfs -rm -r /user/hadoop/output1 
+  245  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  246  hdfs dfs -cat /user/hadoop/output1/part-*
+  247  vim MaxTimestampReducer.java 
+  248  hdfs dfs -cat /user/hadoop/output1/part-* > output1.txt
+  249  vim output1.txt 
+  250  history
+  251  hdfs dfs -cat /user/hadoop/output/part-*
+  252  vim TimestampMapper.java 
+  253  vim output.txt 
+  254  vim MaxTimestampReducer.java 
+  255  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  256  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  257  hdfs dfs -rm -r /user/hadoop/output1 
+  258  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  259  hdfs dfs -cat /user/hadoop/output1/part-* > output1.txt
+  260  vim output.txt 
+  261  vim TimestampMapper.java 
+  262  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  263  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  264  hdfs dfs -rm -r /user/hadoop/output1 
+  265  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  266  hdfs dfs -cat /user/hadoop/output1/part-* > output1.txt
+  267  vim output.txt 
+  268  hdfs dfs -cat /user/hadoop/output/part-*
+  269  vim MaxTimestampReducer.java 
+  270  vim output.txt 
+  271  hdfs dfs -cat /user/hadoop/output/part-* > task1.txt
+  272  vim task1.txt
+  273  vim output.txt 
+  274  cat task1.txt | grep 9226
+  275  cat task1.txt | grep 9227
+  276  cat task1.txt | grep 9228
+  277  vim WikipediaTimestampDriver.java 
+  278  vim WikipediaMapper.java 
+  279  vim WikipediaReducer.java 
+  280  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  281  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  282  hdfs dfs -rm -r /user/hadoop/output1 
+  283  hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output/ /user/hadoop/output1/ > output.txt
+  284  vim output1.txt
+  285  vim output.txt
+  286  hdfs dfs -cat /user/hadoop/output1/part-* > output1.txt
+  287  vim output1.txt
+  288  git clone https://github.com/siddharth-kothari9403/MapReduceHadoop.git
+  289  history > commands.txt
