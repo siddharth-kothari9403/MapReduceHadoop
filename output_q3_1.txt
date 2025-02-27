@@ -5833,6 +5833,7 @@
 5832	to
 5833	sheep
 5834	quot
+5835	
 5836	tr
 5837	further
 5838	reading
@@ -6335,6 +6336,9 @@
 6335	quot
 6336	inner
 6337	asia
+6338	
+6339	
+6340	
 6342	the
 6343	liji
 6344	gives
@@ -6481,13 +6485,16 @@
 6487	grainfood
 6489	legge
 6490	james
+6491	
 6492	the
 6493	li
 6494	ki
 6495	clarendon
 6496	press
 6497	part
+6498	
 6499	p
+6500	
 6502	diktter
 6503	explains
 6504	the
@@ -6540,7 +6547,9 @@
 6551	barbarian
 6552	quot
 6554	diktter
+6555	
 6556	pp
+6557	
 6559	warring
 6560	states
 6561	period
@@ -6608,7 +6617,9 @@
 6624	d
 6625	c
 6626	lau
+6627	
 6628	p
+6629	
 6631	diktter
 6632	says
 6633	quot
@@ -6644,7 +6655,9 @@
 6663	ways
 6664	quot
 6666	diktter
+6667	
 6668	p
+6669	
 6671	however
 6672	this
 6673	seems
@@ -6718,6 +6731,7 @@
 6742	explored
 6743	quot
 6745	fairbank
+6746	
 6748	in
 6749	fact
 6750	during
@@ -6751,6 +6765,7 @@
 6778	ethnically
 6779	manchu
 6781	fairbank
+6782	
 6785	modern
 6786	reinterpretations
 6788	according
@@ -6822,6 +6837,7 @@
 6854	quot
 6856	diktter
 6857	frank
+6858	
 6859	the
 6860	discourse
 6861	of
@@ -6833,6 +6849,7 @@
 6867	university
 6868	press
 6869	p
+6870	
 6872	the
 6873	politician
 6874	and
@@ -6885,6 +6902,7 @@
 6922	wu
 6923	k
 6924	c
+6925	
 6926	the
 6927	chinese
 6928	heritage
@@ -6895,6 +6913,7 @@
 6933	isbn
 6934	x
 6935	pp
+6936	
 6938	despite
 6939	the
 6940	wellknown
@@ -6950,6 +6969,7 @@
 6990	origin
 6991	quot
 6993	wu
+6994	
 6996	wu
 6997	says
 6998	the
@@ -6994,6 +7014,7 @@
 7040	be
 7041	despised
 7043	wu
+7044	
 7046	christopher
 7047	i
 7048	beckwith
@@ -7037,7 +7058,9 @@
 7086	times
 7087	quot
 7089	beckwith
+7090	
 7091	p
+7092	
 7093	furthermore
 7094	quot
 7095	the
@@ -7122,7 +7145,9 @@
 7175	writer
 7176	quot
 7178	beckwith
+7179	
 7180	pp
+7181	
 7182	the
 7183	author
 7184	describes
@@ -7197,7 +7222,9 @@
 7254	greek
 7255	barbar
 7257	beckwith
+7258	
 7259	p
+7260	
 7262	quot
 7263	until
 7264	the
@@ -7267,7 +7294,9 @@
 7334	aposbarbarianapos
 7335	quot
 7337	beckwith
+7338	
 7339	p
+7340	
 7342	despite
 7343	this
 7344	semantic
@@ -7295,7 +7324,9 @@
 7367	barbarians
 7368	savages
 7369	quot
+7370	
 7371	p
+7372	
 7373	quot
 7374	savage
 7375	shanghai
@@ -7305,7 +7336,9 @@
 7379	quot
 7380	barbarian
 7381	quot
+7382	
 7383	p
+7384	
 7385	abc
 7386	chineseenglish
 7387	comprehensive
@@ -7313,7 +7346,9 @@
 7389	quot
 7390	barbarians
 7391	quot
+7392	
 7393	p
+7394	
 7396	beckwith
 7397	concedes
 7398	that
@@ -7378,7 +7413,9 @@
 7457	irrelevant
 7458	quot
 7460	beckwith
+7461	
 7462	pp
+7463	
 7465	beckwithaposs
 7466	second
 7467	problem
@@ -7443,6 +7480,8 @@
 7526	this
 7527	quot
 7529	beckwith
+7530	
+7531	
 7533	although
 7534	beckwith
 7535	does
@@ -7464,10 +7503,12 @@
 7551	chinese
 7552	and
 7553	sinojapanese
+7554	
 7555	and
 7556	grammata
 7557	serica
 7558	recensa
+7559	
 7560	compare
 7561	karlgrlenaposs
 7562	translations
@@ -7516,6 +7557,7 @@
 7608	barbarian
 7609	quot
 7610	ad
+7611	
 7612	gsr
 7613	p
 7614	rong
@@ -7543,6 +7585,7 @@
 7637	west
 7638	quot
 7639	ad
+7640	
 7641	gsr
 7642	a
 7643	di
@@ -7563,6 +7606,7 @@
 7660	servant
 7661	quot
 7662	ad
+7663	
 7664	gsr
 7665	a
 7666	the
@@ -7634,6 +7678,8 @@
 7734	it
 7735	accurately
 7736	quot
+7737	
+7738	
 7739	compare
 7740	listing
 7741	quot
@@ -7648,6 +7694,8 @@
 7750	export
 7751	from
 7754	khwarezm
+7755	
+7756	
 7758	but
 7759	not
 7760	one
@@ -7702,6 +7750,8 @@
 7811	on
 7812	quot
 7814	beckwith
+7815	
+7816	
 7818	the
 7819	third
 7820	problem
@@ -7826,6 +7876,7 @@
 7942	used
 7943	it
 7944	in
+7945	
 7946	in
 7947	a
 7948	speech
@@ -7870,6 +7921,7 @@
 7987	references
 7988	to
 7989	maoaposs
+7990	
 7991	speech
 7992	have
 7993	excised
@@ -7893,11 +7945,13 @@
 8012	ramsey
 8013	robert
 8014	s
+8015	
 8016	the
 8017	languages
 8018	of
 8019	china
 8020	p
+8021	
 8022	princeton
 8023	university
 8024	press
@@ -7950,9 +8004,12 @@
 8078	aposbarbarianapos
 8079	quot
 8081	beckwith
+8082	
+8083	
 8085	christopher
 8086	i
 8087	beckwithaposs
+8088	
 8089	quot
 8090	the
 8091	barbarians
@@ -7966,6 +8023,7 @@
 8099	h
 8100	g
 8101	creelaposs
+8102	
 8103	quot
 8104	the
 8105	barbarians
@@ -8008,6 +8066,8 @@
 8142	nongreeks
 8143	quot
 8145	creel
+8146	
+8147	
 8149	beckwith
 8150	prescriptively
 8151	wrote
@@ -8132,6 +8192,7 @@
 8272	chinese
 8273	wine
 8275	schafer
+8276	
 8279	japanese
 8280	culture
 8282	when
@@ -8303,6 +8364,7 @@
 8465	spanish
 8466	armada
 8467	in
+8468	
 8469	used
 8470	the
 8471	term
@@ -8385,6 +8447,7 @@
 8570	history
 8571	quot
 8572	unesco
+8573	
 8574	that
 8575	two
 8576	cultures
@@ -8569,8 +8632,11 @@
 8756	antiquity
 8757	quot
 8758	speculum
+8759	
 8760	july
+8761	
 8762	p
+8763	
 8764	mathisen
 8765	notes
 8766	that
@@ -8627,6 +8693,7 @@
 8821	transition
 8822	austin
 8823	texas
+8824	
 8825	and
 8826	gerhart
 8827	b
@@ -8642,6 +8709,9 @@
 8837	antiquity
 8838	quot
 8839	viator
+8840	
+8841	
+8842	
 8844	examples
 8845	of
 8846	this
@@ -8675,8 +8745,10 @@
 8874	barbarian
 8875	throughout
 8876	its
+8877	
 8878	volumes
 8879	a
+8880	
 8881	book
 8882	by
 8883	yale
@@ -8717,6 +8789,7 @@
 8918	antiquity
 8919	published
 8920	a
+8921	
 8922	book
 8923	titled
 8924	kingdoms
@@ -8800,6 +8873,7 @@
 9003	popular
 9004	culture
 9007	december
+9008	
 9010	modern
 9011	popular
 9012	culture

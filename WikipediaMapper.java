@@ -21,7 +21,7 @@ public class WikipediaMapper extends Mapper<LongWritable, Text, Text, Text> {
         int index = 0;
 
         while (tokenizer.hasMoreTokens()) {
-            String word = tokenizer.nextToken().replaceAll("[^a-zA-Z]", "").toLowerCase();
+            String word = tokenizer.nextToken().replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
             if (!word.isEmpty()) {
                 indexWordPair.set(index + "," + word);
                 context.write(docID, indexWordPair);
