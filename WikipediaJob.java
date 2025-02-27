@@ -26,7 +26,6 @@ public class WikipediaJob {
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(Text.class);
 
-        // Set number of reducers (at least 3 as required)
         job.setNumReduceTasks(3);
 
         FileInputFormat.addInputPath(job, new Path(args[0]));

@@ -11,9 +11,8 @@ public class WikipediaMapper extends Mapper<LongWritable, Text, Text, Text> {
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        // Extract document ID (remove ".txt" extension)
         String fileName = ((FileSplit) context.getInputSplit()).getPath().getName();
-        String documentID = fileName.replace(".txt", "");  // Remove ".txt"
+        String documentID = fileName.replace(".txt", "");
         docID.set(documentID);
 
         String line = value.toString();

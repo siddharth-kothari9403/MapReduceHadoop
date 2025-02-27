@@ -4,19 +4,17 @@ import java.io.IOException;
 import java.util.*;
 
 public class LatestTimestampReducer extends Reducer<IntWritable, Text, IntWritable, Text> {
-    private TreeMap<Integer, String> latestDocWords = new TreeMap<>(); // Stores words from latest doc
-    private int maxDocID = Integer.MIN_VALUE; // Track latest document ID
+    private TreeMap<Integer, String> latestDocWords = new TreeMap<>();
+    private int maxDocID = Integer.MIN_VALUE;
 
     public void reduce(IntWritable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-        int currentDocID = key.get(); // Extract docID
+        int currentDocID = key.get();
 
-        // If a newer document appears, reset previous data
         if (currentDocID > maxDocID) {
             maxDocID = currentDocID;
             latestDocWords.clear();
         }
 
-        // Only process if it's the latest docID
         if (currentDocID == maxDocID) {
             for (Text val : values) {
                 String[] parts = val.toString().split(",");
@@ -34,7 +32,6 @@ public class LatestTimestampReducer extends Reducer<IntWritable, Text, IntWritab
 
     @Override
     protected void cleanup(Context context) throws IOException, InterruptedException {
-        // Emit words only from the latest document, in order of index
         for (Map.Entry<Integer, String> entry : latestDocWords.entrySet()) {
             context.write(new IntWritable(entry.getKey()), new Text(entry.getValue()));
         }

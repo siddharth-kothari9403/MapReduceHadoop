@@ -21,7 +21,7 @@ public class WikipediaTimestampDriver {
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(Text.class);
 
-        job.setNumReduceTasks(1); // Ensure at least 3 reducers are used
+        job.setNumReduceTasks(1);
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));

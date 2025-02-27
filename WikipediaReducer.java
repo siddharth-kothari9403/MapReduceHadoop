@@ -16,10 +16,7 @@ public class WikipediaReducer extends Reducer<Text, Text, IntWritable, Text> {
             wordList.add(value.toString());
         }
 
-        // Sort words based on index
         Collections.sort(wordList, Comparator.comparingInt(s -> Integer.parseInt(s.split(",")[0])));
-
-        // Emit (index, (doc-ID, word))
         for (String entry : wordList) {
             String[] parts = entry.split(",", 2);
             int index = Integer.parseInt(parts[0]);

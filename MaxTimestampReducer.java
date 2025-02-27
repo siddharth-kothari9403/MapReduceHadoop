@@ -11,16 +11,13 @@ public class MaxTimestampReducer extends Reducer<IntWritable, Text, IntWritable,
 
         for (Text val : values) {
             String[] parts = val.toString().split(",");
-            if (parts.length < 2) continue;  // Expecting timestamp and word
+            if (parts.length < 2) continue;
 
             try {
-                // Extract timestamp from mapper output
-                long timestamp = Long.parseLong(parts[0]);  // Already converted in mapper
                 
-                // Extract word and clean up unwanted characters
+                long timestamp = Long.parseLong(parts[0]);
                 String word = parts[1].replaceAll("[^a-zA-Z]", "").trim();
 
-                // Keep the latest (max) timestamp's word
                 if (timestamp > latestTimestamp) {
                     latestTimestamp = timestamp;
                     latestWord = word;
@@ -30,7 +27,6 @@ public class MaxTimestampReducer extends Reducer<IntWritable, Text, IntWritable,
             }
         }
 
-        // Emit (index, latestWord)
         context.write(key, new Text(latestWord));
     }
 }
