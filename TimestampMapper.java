@@ -13,8 +13,8 @@ public class TimestampMapper extends Mapper<LongWritable, Text, IntWritable, Tex
         String[] parts = line.split("\\s+");  // Splitting on whitespace
 
         // Debugging: Print extracted parts
-        // System.out.println("Line: " + line);
-        // System.out.println("Parts length: " + parts.length);
+        System.out.println("Line: " + line);
+        System.out.println("Parts length: " + parts.length);
 
         if (parts.length < 3) {
             System.out.println("Skipping line due to insufficient parts.");
@@ -46,7 +46,7 @@ public class TimestampMapper extends Mapper<LongWritable, Text, IntWritable, Tex
 	String word = parts[2].replaceAll("[^a-zA-Z]", "");
 
         // Debugging: Print extracted values
-        // System.out.println("Index: " + index + ", Timestamp: " + timestamp + ", Word: " + word);
+        System.out.println("Index: " + index + ", Timestamp: " + timestamp + ", Word: " + word);
 
         // Emit (index, "docID,word")
         context.write(new IntWritable(index), new Text(timestamp + "," + word));

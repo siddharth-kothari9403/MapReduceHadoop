@@ -287,3 +287,67 @@
   287  vim output1.txt
   288  git clone https://github.com/siddharth-kothari9403/MapReduceHadoop.git
   289  history > commands.txt
+  290  ls
+  291  mv classes MapReduceHadoop/
+  292  mv output1.txt MapReduceHadoop/
+  293  mv TimestampMapper.java MapReduceHadoop/
+  294  mv WikipediaJob.jar MapReduceHadoop/
+  295  mv WikipediaReducer.java MapReduceHadoop/
+  296  mv commands.txt MapReduceHadoop/
+  297  mv MaxTimestampReducer.java MapReduceHadoop/
+  298  mv output.txt MapReduceHadoop/
+  299  mv Wikipedia-50-ARTICLES.tar MapReduceHadoop/
+  300  mv WikipediaJob.java MapReduceHadoop/
+  301  mv WikipediaTimestampDriver.java MapReduceHadoop/
+  302  mv extracted_articles_50/ MapReduceHadoop/
+  303  mv output/ MapReduceHadoop/
+  304  mv task1.txt MapReduceHadoop/
+  305  mv Wikipedia-EN-20120601_ARTICLES.tar.gz MapReduceHadoop/
+  306  mv WikipediaMapper.java MapReduceHadoop/
+  307  mv WikipediaTimestampJob.jar Map
+  308  ls
+  309  mv Map/WikipediaTimestampJob.jar MapReduceHadoop/
+  310  mv ./Map/WikipediaTimestampJob.jar MapReduceHadoop/
+  311  cd Map
+  312  ls
+  313  cd MapReduceHadoop/
+  314  ls
+  315  javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java
+  316  ls
+  317  jar -cvf WikipediaTimestampJob.jar -C classes/ .
+  318  ls
+  319  vim .gitignore
+  320  cd ..
+  321  ls
+  322  rm Map
+  323  ls
+  324  cd MapReduceHadoop/
+  325  ls
+  326  git add .
+  327  git commit -m "Map Reducer Implementations Started"
+  328  git config --global user.email siddharthvatps@gmail.com
+  329  git config --global user.name siddharth-kothari9403
+  330  git commit -m "Map Reducer Implementations Started"
+  331  git push
+  332  vim TimestampMapper.java 
+  333  vim MaxTimestampReducer.java 
+  334  vim LatestTimestampMapper.java
+  335  vim LatestTimestampReducer.java
+  336  vim LatestDocumentDriver.java
+  337  vim LatestTimestampReducer.java
+  338  mkdir classes_new
+  339  javac -cp $(hadoop classpath) -d classes_new/ LatestTimestampMapper.java LatestTimestampReducer.java LatestDocumentDriver.java 
+  340  vim LatestTimestampReducer.java 
+  341  javac -cp $(hadoop classpath) -d classes_new/ LatestTimestampMapper.java LatestTimestampReducer.java LatestDocumentDriver.java 
+  342  vim LatestDocumentDriver.java 
+  343  javac -cp $(hadoop classpath) -d classes_new/ LatestTimestampMapper.java LatestTimestampReducer.java LatestDocumentDriver.java 
+  344  jar -cvf LatestTimestampJob.jar -C classes_new/ .
+  345  hadoop jar LatestTimestampJob.jar LatestTimestampDriver /user/hadoop/output/ /user/hadoop/output2/
+  346  hadoop jar LatestTimestampJob.jar LatestDocumentDriver /user/hadoop/output/ /user/hadoop/output2/
+  347  hdfs dfs -cat /user/hadoop/output2/part-* > output_new.txt
+  348  vim output_new.txt 
+  349  cat output_new.txt 
+  350  cat output1.txt 
+  351  cat output_new.txt 
+  352  cat output1.txt 
+  353  history > commands.txt
