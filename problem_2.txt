@@ -1,0 +1,7 @@
+hdfs dfs -mkdir -p /user/hadoop/input
+hdfs dfs -put extracted_articles/*.txt /user/hadoop/input
+
+javac -cp $(hadoop classpath) -d output/ WikipediaMapper.java WikipediaReducer.java WikipediaJob.java
+jar -cvf WikipediaJob.jar -C output/ .
+hadoop jar WikipediaJob.jar WikipediaJob /user/hadoop/input /user/hadoop/output
+hdfs dfs -cat /user/hadoop/output/part-*

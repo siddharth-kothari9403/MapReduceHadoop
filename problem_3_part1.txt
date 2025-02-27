@@ -1,0 +1,4 @@
+javac -cp $(hadoop classpath) -d classes/ TimestampMapper.java MaxTimestampReducer.java WikipediaTimestampDriver.java 
+jar -cvf WikipediaTimestampJob.jar -C classes/ .
+hadoop jar WikipediaTimestampJob.jar WikipediaTimestampDriver /user/hadoop/output /user/hadoop/output1
+hdfs dfs -cat /user/hadoop/output1/part-*

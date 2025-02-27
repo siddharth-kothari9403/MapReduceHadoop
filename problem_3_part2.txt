@@ -1,0 +1,4 @@
+javac -cp $(hadoop classpath) -d classes_new/ LatestTimestampMapper.java LatestTimestampReducer.java LatestDocumentDriver.java 
+jar -cvf LatestDocumentDriver.jar -C classes_new/ .
+hadoop jar LatestDocumentDriver.jar LatestDocumentDriver /user/hadoop/output /user/hadoop/output2
+hdfs dfs -cat /user/hadoop/output2/part-*
